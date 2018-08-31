@@ -39,16 +39,16 @@ export const Header = ({ props }) => {
             `}
             render={staticData => (
                 <div className="post-bar">
-                                        <div className="post-cover--toggle-fullscreen" onClick={expandPost}>
+                    <div className="post-cover--toggle-fullscreen" onClick={expandPost}>
                         <i className="icon icon-menu"></i> <span className="visuallyhidden">Read in fullscreen mode.</span>
                     </div>
                     <h3>Blog</h3>
-                    {/* <nav>
+                    <nav>
                 <ul>
                     <li><Link to="/blog">Blog</Link></li>
                     <li><Link to="/snippets">Snippets</Link></li>
                 </ul>
-            </nav> */}
+            </nav>
                 </div>
             )}
         />
