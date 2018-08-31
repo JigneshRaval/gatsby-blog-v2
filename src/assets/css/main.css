@@ -1,4 +1,8 @@
 
+body {
+    display: flex;
+    flex-flow: column;
+}
 #___gatsby, .container {
     min-height: 100vh;
 }
@@ -17,7 +21,10 @@ a {
     border-radius: 28px;
     background: #95989c;
 }
-
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
 /* = CONTAINERS
 ===================================================*/
 .container.full-screen .container-side {
@@ -27,16 +34,16 @@ a {
     width: 100%;
 }
 .container-side {
-    position: fixed;
+    /* position: fixed;
     z-index: 100;
     top: 0;
     display: flex;
     flex-direction: row;
-    width: 35%;
-    max-width: 800px;
     height: 100vh;
     justify-content: flex-start;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; */
+    width: 35%;
+    max-width: 800px;
 }
 .container-main {
     float: right;

@@ -2,7 +2,7 @@
 date: "2018-05-22"
 title: "My Second Post"
 tags: ["React", "Gatsby", "Static Site"]
-category: "Static Site"
+category: "JavaScript"
 categoryColor: '#F3C610'
 excerpt: "Since the advent of the modern web, performance has been a key consideration when designing a website or a web app. When a website requires no server interaction whatsoever, what is hosted on the web is served to a user as is, this is referred to as a static site."
 coverImage: '/images/fpxoowbr6ls-matthew-henry.jpg'

@@ -6,80 +6,69 @@ import { PostList } from './Post-List';
 
 export default class Template extends React.Component {
 
-  render() {
-    const { location, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-    console.log('Template:', this.props);
+	constructor(props) {
+		super(props);
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1>
-          <Link to={'/'}>
-            Gatsby Starter Blog
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3>
-          <Link to={'/'}>
-            Gatsby Starter Blog
-          </Link>
-        </h3>
-      )
-    }
-    return (
+		/* this.state = {
+			categories: [],
+			tags: [],
+			data: props.data
+		} */
 
-      <StaticQuery
-        query={graphql`
-            query MainLayoutQuery {
-                allMarkdownRemark : allMarkdownRemark(
-                    sort: { order: DESC, fields: [frontmatter___date] }
-                ) {
-                    totalCount
-                    edges {
-                        node {
-                            fields {
-                                slug
-                              },
-                            excerpt(pruneLength: 250)
-                            id
-                            frontmatter {
-                                date(formatString: "MMMM DD, YYYY")
-                                tags
-                                title
-                                category
-                                categoryColor
-                                type
-                            }
-                        }
-                    }
-                }
+	}
 
-            }
+	render() {
+		const { location, children } = this.props
+		const rootPath = `${__PATH_PREFIX__}/`
+
+		return (
+
+			<StaticQuery
+				query={graphql`
+					query MainLayoutQuery {
+						allMarkdownRemark : allMarkdownRemark(
+							sort: { order: DESC, fields: [frontmatter___date] }
+						) {
+							totalCount
+							edges {
+								node {
+									fields {
+										slug
+									},
+									excerpt(pruneLength: 250)
+									id
+									frontmatter {
+										date(formatString: "MMMM DD, YYYY")
+										tags
+										title
+										category
+										categoryColor
+										type
+									}
+								}
+							}
+						}
+					}
             `}
-        render={staticData => (
+				render={staticData => (
 
-          <div className="container">
-            <div className="container-side">
-              <PostList posts={staticData.allMarkdownRemark} />
-            </div>
+					<main>
 
-            <div className="container-main">
-              {header}
-              {children}
-            </div>
+						<Header categories={staticData.allMarkdownRemark.edges} />
+						<div className="container">
+							<div className="container-side">
+								<PostList posts={staticData.allMarkdownRemark.edges} />
+							</div>
 
-          </div>
+							<div className="container-main">
+								{children}
+							</div>
 
+						</div>
+					</main>
+				)}
+			/>
 
-        )}
-      />
-
-
-
-
-    )
-  }
+		)
+	}
 }

@@ -11,12 +11,10 @@ export const PostList = (props) => {
 
         <div className="postlist">
 
-
             {/* <SidebarHeader data={this.state.data} initialData={this.state.initialData} updateFilter={this.handleFilterUpdate} /> */}
 
             <div className="postlist-container">
-
-                {props.posts.edges.map(({ node }, index) => (
+                {props.posts.map(({ node }, index) => (
                     <article key={index} className="postlist-post" data-post-id="82">
                         <Link to={node.fields.slug} className="postlist-post-inner" onClick={makePostActive}>
                             <div className="postlist-category">
