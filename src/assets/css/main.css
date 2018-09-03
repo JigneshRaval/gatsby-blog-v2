@@ -1,7 +1,19 @@
-
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+}
 body {
     display: flex;
     flex-flow: column;
+    background-color: #fafbfc;
+    font-family: Futura PT,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
 }
 #___gatsby, .container {
     min-height: 100vh;
@@ -22,8 +34,11 @@ a {
     background: #95989c;
 }
 .container {
-    display: flex;
-    flex-flow: row wrap;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 /* = CONTAINERS
 ===================================================*/
@@ -449,13 +464,6 @@ a {
     padding: 4em;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-}
-
 /* Scrollbar customization using CSS only
 ========================================================*/
 /* .class-name::-webkit-scrollbar {
@@ -524,4 +532,26 @@ body {
 .taglist--posts ul li h2 {
     font-size: 22px;
     font-weight: 500;
+}
+
+/* ============== NEW CSS =================*/
+.post-wrapper {
+    max-width: 1008px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+.post-list {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #FFF;
+    margin: 3em 2em;
+    border: 1px solid #f5f3f7;
+    /* box-shadow: 0 5px 20px rgba(25, 17, 34, 0.1); */
+}
+.post-list__item {
+    padding: 2em;
+    flex-basis: 25%;
+    border-left: 1px solid #f5f3f7;
+    border-bottom: 1px solid #f5f3f7;
 }

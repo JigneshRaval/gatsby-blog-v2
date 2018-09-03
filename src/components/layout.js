@@ -1,20 +1,12 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { rhythm, scale } from '../utils/typography';
 import { Header } from './Header';
-import { PostList } from './Post-List';
+import { TagsList } from './Tags-List.component';
 
 export default class Template extends React.Component {
 
 	constructor(props) {
 		super(props);
-
-		/* this.state = {
-			categories: [],
-			tags: [],
-			data: props.data
-		} */
-
 	}
 
 	render() {
@@ -55,14 +47,11 @@ export default class Template extends React.Component {
 					<main>
 
 						<Header categories={staticData.allMarkdownRemark.edges} />
-						<div className="container">
-							<div className="container-side">
-								<PostList posts={staticData.allMarkdownRemark.edges} />
-							</div>
 
-							<div className="container-main">
+						<div className="container">
+
+
 								{children}
-							</div>
 
 						</div>
 					</main>
