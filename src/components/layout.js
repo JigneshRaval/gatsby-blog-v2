@@ -7,6 +7,7 @@ export default class Template extends React.Component {
 
 	constructor(props) {
 		super(props);
+		console.log('Layout Main :', props)
 	}
 
 	render() {
@@ -45,7 +46,7 @@ export default class Template extends React.Component {
 				render={staticData => (
 
 					<main>
-
+						<TagsList tags={staticData.allMarkdownRemark.edges}/>
 						<Header categories={staticData.allMarkdownRemark.edges} />
 
 						<div className="container">

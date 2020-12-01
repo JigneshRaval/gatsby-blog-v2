@@ -16,7 +16,7 @@ export const TagsList = (props) => {
 
         console.log(uniqueColors);
     } */
-    let uniqueTagList;
+
 
     {
         /* uniqueTagList = props.posts.reduce((total, amount) => {
@@ -28,20 +28,30 @@ export const TagsList = (props) => {
             });
             return <li>{total}</li>;
         }, []) */
-        let tags = [];
+        let tagsArray = [];
 
-        props.posts.map(({ node }) => {
+        props.tags.map(({ node }) => {
             if (node.frontmatter.tags) {
-                tags = tags.concat(node.frontmatter.tags);
+                tagsArray = tagsArray.concat(node.frontmatter.tags);
             }
         })
 
-        tags.reduce((allTags, uniqTag) => {
+        console.log('tags --', tagsArray);
+        function onlyUnique(value, index, self) {
+            return self.indexOf(value) === index;
+        }
+
+        // usage example:
+        //var a = ['a', 1, 'a', 2, '1'];
+        var unique = tagsArray.filter( onlyUnique ); // returns ['a', 1, 2, '1']
+        /* let test = tagsArray.reduce((allTags, uniqTag) => {
             console.log(allTags, uniqTag);
             if (allTags.indexOf(uniqTag) === -1) {
                 allTags.push(uniqTag);
             }
-        }, []);
+        }); */
+
+        console.log('tags 2 --',unique);
 
         console.log('uniqueTagList :', uniqueTagList);
     }
@@ -53,7 +63,7 @@ export const TagsList = (props) => {
             <div className="postlist-container">
 
 
-                {uniqueTagList}
+
 
             </div>
 
